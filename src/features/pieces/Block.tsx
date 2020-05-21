@@ -1,6 +1,18 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
+import styled from 'styled-components';
+
 import { BlockProps } from '../../app/App';
+
+const blockSize = '46px';
+
+const StyledBlock = styled.div`
+	width: ${blockSize};
+	height: ${blockSize};
+	position: absolute;
+	background-color: red;
+	border: 2px solid black;
+`;
 
 export default function Block(props: BlockProps): JSX.Element {
 
@@ -8,13 +20,9 @@ export default function Block(props: BlockProps): JSX.Element {
 	const top = props.y * 50;
 
 	return (
-		<div style={{
+		<StyledBlock style={{
 			left: `${left}px`,
-			top: `${top}px`,
-			width: '50px',
-			height: '50px',
-			position: 'relative',
-			backgroundColor: 'red'
+			top: `${top}px`
 		}}/>
 	)
 }
